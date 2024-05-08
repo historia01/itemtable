@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "http-server": "^14.1.1",
-    "mathjs": "^11.8.0"
+    "mathjs": "^11.8.0",
+    "particles.js": "^2.0.0"
   }
 }
