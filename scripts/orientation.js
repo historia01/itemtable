@@ -19,6 +19,7 @@ $(document).ready(function(){
     } else {
         console.log("Device is in landscape mode");
         $(".rotationWarning").remove();
+        $(".rotationWarning").css("display", "unset");
         destroyMe.remove();
     }
     $("#closePrompt").click(function(){
