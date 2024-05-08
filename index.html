@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <title>EDUCASITE - CompuChem</title>
+        <link rel="icon" type="image/x-icon" href="./media/favicon.ico">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script id="math" src="https://cdn.jsdelivr.net/npm/mathjs@11.7.0/lib/browser/math.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script src="http://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+        <script src="https://unpkg.com/chaffle/chaffle.min.js"></script>
+        <script src="./scripts/keyboard.js"></script>
+        <script src="./scripts/main.js"></script> 
+        <script src="./scripts/others.js"></script>
+        <script src="./scripts/guideOthers.js"></script>
+        <script src="./scripts/charts.js"></script>
+        <script src="./scripts/orientation.js"></script> 
+        <script src="./scripts/animButton.js"></script>
+        <script src="./scripts/ligthshow.js"></script>
+        <script src="./scripts/activityLayout.js"></script>
+        <script src="./scripts/setscores.js"></script>
+        <script src="https://kit.fontawesome.com/29f220c21a.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" type="text/css" href="./css/fractionstyles.css">
+        <link rel="stylesheet" type="text/css" href="./css/faceAnim.css">
+        <link rel="stylesheet" type="text/css" href="./css/lightshow.css">
+        <link rel="stylesheet" type="text/css" href="./css/activitystyles.css">
+        <link rel="stylesheet" type="text/css" href="./css/styles.css">
+    </head>
+    <div id="particles-js">
+    <body>
+        <div id="loading-screen">
+            <div class="spinner"></div>
+        </div>
+        <div style="background-image: url('./media/backup/background.png');display: unset;">
+            <div class="welcomeScreen">
+                <div>
+                    <h1 class="glowWhite" style="font-family: ledlight; color: #c6c6c61c; font-size: 7vh;">PROYECTO<br><a class="glowPurple" style="font-size: larger; color: rgba(83, 47, 255, 0.37);">COMPUCHEM</a></h1>
+                    <button class="otherButtons" id="fullscreenButton2" style="width: 100%; font-size: 3vh;">EMPEZAR</button>
+                </div>
+            </div>
+        </div>
+        <div class="infobar">
+            <div class="infotxt glowWhite">BIENVENIDO A COMPUCHEM</div>
+            <div class="infotxtbg">ÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆÆ</div>
+        </div>
+        <div class="activityLayout">
+            <div class="activityObjects">
+                <!-- <div class="lightShow">
+                    <div class="ligthShowContainer1">
+                        <div class="LSElement" id="LSCircleElement"></div>
+                    </div>
+                    <div class="lightShowContainer2">
+                        <div>
+                            <p id="lightShowText">this is some sample text</p>
+                        </div>
+                    </div>
+                </div> -->
+                <div class="activityObject" id="actTimerContainer">
+                    <div id="actTimer" class="glowWhite">60</div>
+                </div>
+                <div class="activityObject" id="msButtons">
+                    <button class="actButton" value="a" id="actButton1">A</button>
+                    <button class="actButton" value= "b" id="actButton2">B</button>
+                    <button class="actButton" value= "c" id="actButton3">C</button>
+                    <button class="actButton" value= "d" id="actButton4">D</button>
+                </div>
+                <div class="activityObject glowWhite" id="prBar">
+                    
+                </div>      
+            </div>
+        </div>         
+        <div class="sidebar">
+            <h1>Actividades</h1>
+            <hr style="background-color: #e7ded5;">
+            <div class="activities" id="activity1">
+                <h2 class="actTitle">Actividad 1:</h2>
+                <h3 class="actSTitle">Introducción</h3>
+                <p class="actDesc">Introducción a las básicas de la aplicación.</p>
+                <div class="startButton" id="activity1start"><button class="actStartButton" id="actStartButton1">Empezar</button></div>
+                <h6 class="completion" id="act1iscom" style="grid-row: 3;">Incompleta</h6>
+            </div>
+            <div class="activities" id="activity2">
+                <h2 class="actTitle">Actividad 2:</h2>
+                <h3 class="actSTitle">Elementos Químicos</h3>
+                <p class="actDesc">5 preguntas de seleccion multiple<br></p>
+                <div class="rating" id="act2rat">✖</div>
+                <div class="progressBar" id="act2bar">⬜⬜⬜⬜⬜</div>
+                <div class="startButton" id="activity2start"><button class="actStartButton" id="actStartButton2">Empezar</button></div>
+                <h6 class="completion" id="act2iscom">Incompleta</h6>
+            </div>
+            <div class="activities" id="activity3">
+                <h2 class="actTitle">Actividad 3:</h2>
+                <h3 class="actSTitle">Propiedades Químicas</h3>
+                <p class="actDesc">5 preguntas de selección múltiple</p>
+                <div class="rating" id="act3rat">✖</div>
+                <div class="progressBar" id="act3bar">⬜⬜⬜⬜⬜</div>
+                <div class="startButton" id="activity3start"><button class="actStartButton" id="actStartButton3">Empezar</button></div>
+                <h6 class="completion" id="act3iscom">Incompleta</h6>
+            </div>
+        </div>
+        <div id="destroyMe" style="background-image: url('./media/backup/background.png'); background-size: cover; z-index: 50; position: fixed; top: 0; left: 0; bottom: 0; right: 0;">
+            <div class="rotationWarning" style="z-index: 51;">
+                <div class="warningText">
+                    <div class="rotationText">
+                        Para una mejor experiencia<br>
+                        ¡Voltea el Celular!
+                    </div>
+                    <button class="otherButtons" id="closePrompt" style="top: 1vh; left: 50vw; font-size: 4vh; border-radius: 15vw; position: fixed;">❌</button>
+                    <img class="rotationGif" src="./media/rotate.gif" alt="Image">
+                </div>
+            </div>
+        </div>
+        <div id="otherButtonsRow">
+            <button class="otherButtons" id="fullscreenButton"><i class="fa-solid fa-up-right-and-down-left-from-center buttonicon"></i></button>
+            <button class="otherButtons" id="otherMenu" style="display: unset;"><i class="fa-solid fa-book buttonicon"></i></button>
+            <button class="otherButtons" id="endActivity" style="display: none;"><i class="fa-solid fa-xmark buttonicon"></i></button>
+        </div>
+        <div id="mainContent">
+            <div id="commentBox">
+                <div class="leftSectionContainer" style="display: none;">
+                    <div class="pcItemsContainer">
+                        <img class="pcItems glow" id="case" src="./media/pccaseblueglow.png">
+                    </div>
+                    <div class="elementsContainer">
+                        <img src="./media/cobre.png" class="t-item" id="cobre">
+                        <img src="./media/aluminio.png" class="t-item" id="alum">
+                        <img src="./media/oro.png" class="t-item" id="oro">
+                        <img src="./media/estaño.png" class="t-item" id="esta">
+                        <img src="./media/hierro.png" class="t-item" id="hierro">
+                        <img src="./media/plomo.png" class="t-item" id="plomo">
+                        <img src="./media/silicio.png" class="t-item" id="sili">
+                    </div>
+                </div>
+                <div class="selectionButtons" style="display: none;">
+                    <div class="selButton" id="homeb">
+                        <i class="fa-solid fa-house" style="align-self: center;"></i>
+                    </div>
+                    <div class="selButton" id="glassb">
+                        <i class="fa-solid fa-magnifying-glass" style="align-self: center;"></i>
+                    </div>
+                </div>
+                <div class="openingAnimation">
+                    <div class="case2Container">
+                        <img class="pcItems glow" id="case2" src="./media/pccaseblueglow.png">
+                    </div>
+                    <div class="lidContainer">
+                        <img class="pcItems" id="lid" src="./media/lid.png">
+                    </div>
+                    <div class="arrowContainer">
+                        <img id="pcArrow" src="./media/arrow.png">
+                    </div>
+                </div>
+                <div class="infohContainer" style="display: none;">
+                    <div class="infohome">
+                        <h1 class="titletext glowCyan" id="elementHeader">ELEMENT</h1>
+                        <p class="otherheader" id="simbolo">SIMBOLO</p>
+                        <p class="titletext glowWhite" id="elementSymbol" style="color: white !important;">H</p>
+                        <P class="otherheader" id="diagram">DIAGRAMA</P>
+                        <div class="bohrdiagram">
+                            <img id="bohrImageContainer" src="./media/items/default.png" style="width: 12vw;">
+                        </div>
+                        <p class="otherheader" id="properties">PROPIEDADES</p>
+                        <div class="infoContainer">
+                        </div>
+                    </div>
+                </div>
+                
+                <audio id="click">
+                    <source src="./media/audio/hit.mp3" type="audio/mpeg">
+                </audio>
+            </div>
+            <div id="commentBoxClone">
+                <div id="helpText">
+                    <h3 id="commentHeader" class="commentText">Bienvenido a<br>Camilito te Educa!</h3>
+                    <p id="commentPa1" class="commentText"><a href="#" id="howToUse"></a></p>
+                </div>
+            </div>
+        </div>
+    </body>
+    </div>
+</html>

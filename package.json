@@ -1,0 +1,15 @@
+{
+  "name": "caritasonriente",
+  "version": "1.0.0",
+  "description": "Calculator",
+  "main": "./scripts/compare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "http-server": "^14.1.1",
+    "mathjs": "^11.8.0"
+  }
+}
