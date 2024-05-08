@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
     $("#compareButton").click(function(){
         if($("#numberB").val() == $("#numberD").val()){
