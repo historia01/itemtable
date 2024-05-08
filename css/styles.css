@@ -321,3 +321,9 @@
   100% { opacity: 0; transform: translateY(40vh); }
 }
 
+.text-instruction {
+  position: fixed;
+  font-size: 3vw;
+  left: 48vw;
+  top: 20vh;
+}

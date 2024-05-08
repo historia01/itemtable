@@ -231,6 +231,25 @@ function elementHandler (eid) {
   }
 }
 
+function tagHandler (eid) {
+  switch(eid) {
+    case "fullscreenButton":
+      $(".infotxt").html("PANTALLA COMPLETA");
+      break;
+    case "otherMenu":
+      $(".infotxt").html("ACTIVIDADES");
+      break;
+    case "endActivity":
+      $(".infotxt").html("TERMINAR ACTIVIDAD");
+      break;
+    case "fullscreenButton2":
+      $(".infotxt").html("BIENVENIDO");
+      break;
+    default:
+      $(".infotxt").html("(‾◡◝)");
+  }
+}
+
 $(document).ready(function(){
     $("#fullscreenButton").click(function(){
         requestFS();
@@ -258,10 +277,17 @@ $(document).ready(function(){
       $("#click")[0].play();
     });
 
+    $(".otherButtons").hover(function(){
+      const buttonId = $(this).attr('id');
+      tagHandler(buttonId);
+    }, function(){
+
+    });
+
     $("#fullscreenButton2").click(function(){
       setTimeout(function(){
         $(".infotxt").html("HAZ CLICK EN LA COMPUTADORA PARA EMPEZAR");
-      }, 6000);
+      }, 2000);
     });
 
     $(".openingAnimation").click(function(){
@@ -295,6 +321,7 @@ $(document).ready(function(){
 
     $(".t-item").click(function(event){
       $(".infohContainer").fadeIn();
+      $(".text-instruction").fadeOut();
       event.preventDefault();
       const elementId = $(this).attr('id');
       infoHandler(elementId);

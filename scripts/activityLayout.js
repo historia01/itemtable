@@ -225,6 +225,7 @@ function restoreArea(){
     console.log("Restore Function Called")
     $('#loading-screen').css("opacity", "1");
     setTimeout(function(){
+        $(".infotxt").html("ACTIVIDAD TERMINADA");
         $("#prBar").html("")
         $("#clearButton").trigger("click");
         opencloseSidebar();
@@ -235,7 +236,6 @@ function restoreArea(){
         $('#loading-screen').css("opacity", "0");
         $('#otherMenu').css("display", "unset");
         $('#endActivity').css("display", "none");
-        $(".infotxt").html("BIENVENIDO A COMPUCHEM");
         $('#helpText').fadeOut(500);
         $('#commentBox').fadeIn();
         setTime("0")
@@ -479,7 +479,8 @@ $(document).ready(function(){
 
     $("#actStartButton1").click(function(){
         activityNumber = 2;
-        $(".infotxt").html("INTRODUCCION");
+        $(".infotxt").html("ACT EN PROGRESO");
+        $(".infotxt2").html("INTRODUCCION");
         buttonValuesClear();
         configureActivty([1, 5, 999, 0]);
         setTime(999);
@@ -489,7 +490,8 @@ $(document).ready(function(){
     $("#actStartButton2").click(function(){
         activityNumber = 0;
         buttonValuesClear();
-        $(".infotxt").html("ACTIVIDAD 1");
+        $(".infotxt").html("ACT EN PROGRESO");
+        $(".infotxt2").html("ACTIVIDAD 1");
         configureActivty([1, 5, 30, 0]);
         setTime(30);
         activityStart("Actividad 1", "Elementos quimicos en la computadora.<br>Presiona un Boton para Continuar.");
@@ -498,7 +500,8 @@ $(document).ready(function(){
     });
     $("#actStartButton3").click(function(){
         activityNumber = 1;
-        $(".infotxt").html("ACTIVIDAD 2");
+        $(".infotxt").html("ACT EN PROGRESO");
+        $(".infotxt2").html("ACTIVIDAD 2");
         configureActivty([1, 5, 30, 1])
         buttonValuesClear();
         setTime(30);

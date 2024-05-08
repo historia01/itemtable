@@ -734,3 +734,13 @@ h6 {
   z-index: 2;
   position: relative;
 }
+
+.infotxt2 {
+  z-index: 2;
+  position: relative;
+  left: 49.5vw;
+  font-size: 5vh;
+  color: white;
+  font-family: alarm;
+  top: 5.1vh;
+}
